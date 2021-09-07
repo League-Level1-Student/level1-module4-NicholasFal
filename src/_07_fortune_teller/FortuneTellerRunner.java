@@ -14,6 +14,6 @@ public class FortuneTellerRunner {
     
     static void begin() {
       	 // Welcome the user. Give them a hint for the secret location.
-
+    	System.out.println("Hi! Click on one of my eyes to have your fortune read.");
     }
 }

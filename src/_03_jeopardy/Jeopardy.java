@@ -29,7 +29,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-import sun.swing.text.html.FrameEditorPaneTag;
+//import sun.swing.text.html.FrameEditorPaneTag;
 
 
 /* Check out the Jeopardy Handout to see what the end result should look like: http://bit.ly/1bvnvd4 */
