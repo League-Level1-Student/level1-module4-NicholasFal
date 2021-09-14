@@ -13,13 +13,13 @@ public class Calculator implements MouseListener {
 	JLabel result = new JLabel();
 	JTextField first = new JTextField(10);
 	JTextField second = new JTextField(10);
+	JButton add = new JButton();
+	JButton subtract = new JButton();
+	JButton multiply = new JButton();
+	JButton divide = new JButton();
 	public void run() {
 		JFrame frame = new JFrame();
 		JPanel panel = new JPanel();
-		JButton add = new JButton();
-		JButton subtract = new JButton();
-		JButton multiply = new JButton();
-		JButton divide = new JButton();
 		frame.add(panel);
 		panel.add(first);
 		panel.add(second);
@@ -33,19 +33,38 @@ public class Calculator implements MouseListener {
 		multiply.setText("x");
 		divide.setText("÷");
 		add.addMouseListener(this);
+		subtract.addMouseListener(this);
+		multiply.addMouseListener(this);
+		divide.addMouseListener(this);
 		frame.setSize(275, 125);
 		frame.setVisible(true);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 
 	@Override
-	public void mouseClicked(MouseEvent arg0) {
+	public void mouseClicked(MouseEvent yes) {
 		// TODO Auto-generated method stub
-		int firstInt = Integer.parseInt(first.getText());
-		int secondInt = Integer.parseInt(second.getText());
-		int resultInt = firstInt + secondInt;
-		String resultString = Integer.toString(resultInt);
+		double firstInt = Double.parseDouble(first.getText());
+		double secondInt = Double.parseDouble(second.getText());
+		double resultInt;
+		String resultString;
+		if(yes.getSource() == add) {
+		resultInt = firstInt + secondInt;
+		resultString = Double.toString(resultInt);
 		result.setText(resultString);
+		} else if(yes.getSource() == subtract) {
+			resultInt = firstInt - secondInt;
+			resultString = Double.toString(resultInt);
+			result.setText(resultString);
+		} else if(yes.getSource() == multiply) {
+			resultInt = firstInt * secondInt;
+			resultString = Double.toString(resultInt);
+			result.setText(resultString);
+		} else if(yes.getSource() == divide) {
+			resultInt = firstInt / secondInt;
+			resultString = Double.toString(resultInt);
+			result.setText(resultString);
+		}
 	}
 
 	@Override
